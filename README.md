@@ -1,54 +1,245 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<h1 align="center">🚀 Ingressy API</h1>
 
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+  API REST para gestão de eventos e venda de ingressos.
 </p>
 
-## About Laravel
+<p align="center">
+  <img src="https://img.shields.io/badge/status-em%20desenvolvimento-yellow" />
+  <img src="https://img.shields.io/badge/backend-laravel-red" />
+  <img src="https://img.shields.io/badge/database-postgresql-blue" />
+  <img src="https://img.shields.io/badge/docker-ready-blue" />
+</p>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+<hr/>
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+<h2>📌 Sobre a API</h2>
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+<p>
+A <strong>Ingressy API</strong> é responsável por toda a lógica de negócio da plataforma,
+incluindo gerenciamento de usuários, eventos, pagamentos e validação de ingressos.
+</p>
 
-## Learning Laravel
+<ul>
+  <li>Arquitetura REST</li>
+  <li>Autenticação baseada em token</li>
+  <li>Integração com gateway de pagamento</li>
+  <li>Geração e validação de QR Code</li>
+</ul>
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+<hr/>
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+<h2>🚀 Funcionalidades</h2>
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+<h3>👤 Usuários</h3>
+<ul>
+  <li>Cadastro e autenticação</li>
+  <li>Perfis:
+    <ul>
+      <li>organizer</li>
+      <li>customer</li>
+      <li>staff (validador)</li>
+      <li>admin</li>
+    </ul>
+  </li>
+</ul>
 
-## Agentic Development
+<h3>🎫 Eventos</h3>
+<ul>
+  <li>CRUD completo</li>
+  <li>Controle de capacidade</li>
+  <li>Eventos ilimitados</li>
+</ul>
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+<h3>💳 Pagamentos</h3>
+<ul>
+  <li>Integração com gateway (sandbox)</li>
+  <li>Status:
+    <ul>
+      <li>pending</li>
+      <li>approved</li>
+      <li>refused</li>
+      <li>refunded</li>
+    </ul>
+  </li>
+  <li>Suporte a webhook</li>
+</ul>
 
-```bash
-composer require laravel/boost --dev
+<h3>🎟️ Ingressos</h3>
+<ul>
+  <li>Gerados após pagamento aprovado</li>
+  <li>QR Code único</li>
+  <li>Status:
+    <ul>
+      <li>active</li>
+      <li>cancelled</li>
+      <li>used</li>
+    </ul>
+  </li>
+</ul>
 
-php artisan boost:install
-```
+<h3>✅ Validação</h3>
+<ul>
+  <li>Validação via QR Code</li>
+  <li>Restrição por evento</li>
+  <li>Controle de reuso</li>
+</ul>
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+<hr/>
 
-## Contributing
+<h2>🧱 Arquitetura</h2>
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+<pre>
+Client (Frontend / Mobile)
+        ↓
+   Ingressy API
+        ↓
+   PostgreSQL
+</pre>
 
-## Code of Conduct
+<hr/>
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+<h2>🛠️ Stack Tecnológica</h2>
 
-## Security Vulnerabilities
+<ul>
+  <li><strong>Framework:</strong> Laravel</li>
+  <li><strong>ORM:</strong> Eloquent</li>
+  <li><strong>Autenticação:</strong> JWT ou Sanctum</li>
+  <li><strong>Banco:</strong> PostgreSQL</li>
+  <li><strong>Containerização:</strong> Docker</li>
+</ul>
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+<hr/>
+
+<h2>📂 Estrutura Base</h2>
+
+<pre>
+app/
+ ├── Models
+ ├── Http
+ │    ├── Controllers
+ │    ├── Requests
+ ├── Services
+database/
+ ├── migrations
+routes/
+ ├── api.php
+</pre>
+
+<hr/>
+
+<h2>⚙️ Setup do Projeto</h2>
+
+<h3>📦 Pré-requisitos</h3>
+<ul>
+  <li>Docker</li>
+  <li>Docker Compose</li>
+</ul>
+
+<h3>🚀 Subir ambiente</h3>
+
+<pre>
+docker-compose up -d --build
+</pre>
+
+<h3>🔄 Rodar migrations</h3>
+
+<pre>
+docker exec -it ingressy_api php artisan migrate
+</pre>
+
+<h3>🔑 Gerar chave da aplicação</h3>
+
+<pre>
+docker exec -it ingressy_api php artisan key:generate
+</pre>
+
+<hr/>
+
+<h2>🔐 Autenticação</h2>
+
+<p>
+A API utiliza autenticação baseada em token.
+</p>
+
+<ul>
+  <li>JWT (recomendado)</li>
+  <li>ou Laravel Sanctum</li>
+</ul>
+
+<hr/>
+
+<h2>🔗 Principais Endpoints</h2>
+
+<pre>
+POST   /auth/register
+POST   /auth/login
+
+GET    /events
+POST   /events
+GET    /events/{id}
+
+POST   /payments
+POST   /webhook/payment
+
+POST   /tickets/validate
+</pre>
+
+<hr/>
+
+<h2>🧩 Modelo de Dados (Resumo)</h2>
+
+<pre>
+User
+ ├── id
+ ├── name
+ ├── email
+ ├── cpf
+ └── profile_type
+
+Event
+ ├── id
+ ├── name
+ ├── location
+ └── user_id
+
+Payment
+ ├── id
+ ├── status
+ ├── amount
+ └── user_id
+
+Ticket
+ ├── id
+ ├── status
+ ├── qr_code
+ └── payment_id
+
+Gateway
+ ├── id
+ ├── user_id
+ ├── provider
+ └── environment
+</pre>
+
+<hr/>
+
+<h2>⚠️ Observações Importantes</h2>
+
+<ul>
+  <li>Ingressos são gerados apenas após pagamento aprovado</li>
+  <li>Validação é feita via QR Code único</li>
+  <li>Webhooks atualizam status de pagamento automaticamente</li>
+</ul>
+
+<hr/>
+
+<h2>👨‍💻 Autor</h2>
+
+<p><strong>João Vitor Lima Lago Santos</strong></p>
+
+<hr/>
+
+<h2>📄 Licença</h2>
+
+<p>Projeto acadêmico / MVP em evolução.</p>
